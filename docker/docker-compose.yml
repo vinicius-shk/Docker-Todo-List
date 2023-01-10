@@ -7,11 +7,13 @@ services:
     depends_on:
       - todoback
     environment:
-      - REACT_APP_API_HOST=todoback
+      - REACT_APP_API_HOST=localhost
+    container_name: todofront
   todoback:
     build: ./todo-app/back-end
     ports:
       - 3001:3001
+    container_name: todoback
   todotests:
     build: ./todo-app/tests
     depends_on:
